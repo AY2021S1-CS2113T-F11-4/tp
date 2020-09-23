@@ -47,9 +47,8 @@ public class Duke {
                     if (exec.equals(ADD)) {
                         proj.addMember(pDetails.subList(2, pDetails.size()));
                     } else if (exec.equals(DELETE)) {
-                        proj.removeMember((ArrayList<String>) pDetails.subList(2, pDetails.size()));
+                        proj.removeMember(pDetails.subList(2, pDetails.size()));
                     } else if (exec.equals(DISPLAY_MEMBERS)) {
-                        System.out.println("Display called");
                         proj.displayMembers();
                     }
                 }
@@ -61,7 +60,6 @@ public class Duke {
         }
         System.out.println("Code exited");
     }
-
 
     public static ArrayList<String> parser(String input) {
         String[] projectDetails = input.split("\\s+");
