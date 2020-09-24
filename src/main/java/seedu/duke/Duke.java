@@ -26,7 +26,7 @@ public class Duke {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
         pDetails = parser(input);
-
+        System.out.println(pDetails);
         String projectDesc = pDetails.get(pDetails.indexOf(DESCRIPTION) + 1);
         String projectTitle = pDetails.get(pDetails.indexOf(TITLE) + 1);
         int projectDur = Integer.parseInt(pDetails.get(pDetails.indexOf(DURATION) + 1));
@@ -35,15 +35,18 @@ public class Duke {
         Project proj = new Project(projectTitle, projectDesc, projectDur, projectSD);
         input = in.nextLine();
         while (!input.equalsIgnoreCase("bye")) {
-
-            pDetails = parser(input);
-            String type = pDetails.get(0);
-            String exec = pDetails.get(1);
             try {
-                if (type.equals("project") && exec.equals("/info")) {
-                    System.out.println(proj);
-                }
-                if (type.equals("member")) {
+                pDetails = parser(input);
+                String type = pDetails.get(0);
+                String exec = pDetails.get(1);
+
+                switch (type) {
+                case "project":
+                    if (exec.equals("/info")) {
+                        System.out.println(proj);
+                    }
+                    break;
+                case "member":
                     if (exec.equals(ADD)) {
                         proj.addMember(pDetails.subList(2, pDetails.size()));
                     } else if (exec.equals(DELETE)) {
@@ -51,12 +54,18 @@ public class Duke {
                     } else if (exec.equals(DISPLAY_MEMBERS)) {
                         proj.displayMembers();
                     }
+                    break;
+                case "task":
+                    if (exec.equals(ADD)) {
+
+
+                    }
+                    break;
                 }
-            } catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             input = in.nextLine();
-
         }
         System.out.println("Code exited");
     }
@@ -65,5 +74,4 @@ public class Duke {
         String[] projectDetails = input.split("\\s+");
         return new ArrayList<>(Arrays.asList(projectDetails));
     }
-
 }

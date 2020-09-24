@@ -5,6 +5,9 @@ public class Member {
     public Member(String userId){
         this.userId = userId;
     }
+    public String getUserId(){
+        return userId;
+    }
 
     @Override
     public boolean equals(Object o) {
