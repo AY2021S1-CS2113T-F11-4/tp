@@ -19,6 +19,7 @@ public class Duke {
         String DURATION = "-duration";
         String SD = "-sd";
         String DISPLAY_MEMBERS = "/disp";
+        String PRIORITY = "-priority";
 
         ArrayList<String> pDetails;
 
@@ -26,7 +27,7 @@ public class Duke {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
         pDetails = parser(input);
-        System.out.println(pDetails);
+
         String projectDesc = pDetails.get(pDetails.indexOf(DESCRIPTION) + 1);
         String projectTitle = pDetails.get(pDetails.indexOf(TITLE) + 1);
         int projectDur = Integer.parseInt(pDetails.get(pDetails.indexOf(DURATION) + 1));
@@ -44,6 +45,8 @@ public class Duke {
                 case "project":
                     if (exec.equals("/info")) {
                         System.out.println(proj);
+                    } else if (exec.equals("/backlog")){
+                        proj.displayProjectBacklog();
                     }
                     break;
                 case "member":
@@ -57,8 +60,10 @@ public class Duke {
                     break;
                 case "task":
                     if (exec.equals(ADD)) {
-
-
+                        String desc = String.join(" ",pDetails.subList(pDetails.indexOf(DESCRIPTION)+1, pDetails.indexOf(PRIORITY)));
+                        String title = String.join(" ", pDetails.subList(pDetails.indexOf(TITLE)+1, pDetails.indexOf(DESCRIPTION)));
+                        String priority = pDetails.get(pDetails.indexOf(PRIORITY)+1);
+                        proj.addTask(new Task(title, desc, priority));
                     }
                     break;
                 }

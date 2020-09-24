@@ -63,6 +63,10 @@ public class Project {
             }
         }
     }
+
+    public void addTask(Task task) {
+        projectBacklog.add(task);
+    }
     public void displayProjectBacklog() {
         if (projectBacklog.size() == 0) {
             System.out.println("No tasks currently added to projecet backlog.");
