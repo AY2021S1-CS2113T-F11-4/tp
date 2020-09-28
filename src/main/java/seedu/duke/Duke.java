@@ -45,7 +45,7 @@ public class Duke {
                 case "project":
                     if (exec.equals("/info")) {
                         System.out.println(proj);
-                    } else if (exec.equals("/backlog")){
+                    } else if (exec.equals("/backlog")) {
                         proj.displayProjectBacklog();
                     }
                     break;
@@ -60,9 +60,9 @@ public class Duke {
                     break;
                 case "task":
                     if (exec.equals(ADD)) {
-                        String desc = String.join(" ",pDetails.subList(pDetails.indexOf(DESCRIPTION)+1, pDetails.indexOf(PRIORITY)));
-                        String title = String.join(" ", pDetails.subList(pDetails.indexOf(TITLE)+1, pDetails.indexOf(DESCRIPTION)));
-                        String priority = pDetails.get(pDetails.indexOf(PRIORITY)+1);
+                        String desc = String.join(" ", pDetails.subList(pDetails.indexOf(DESCRIPTION) + 1, pDetails.indexOf(PRIORITY)));
+                        String title = String.join(" ", pDetails.subList(pDetails.indexOf(TITLE) + 1, pDetails.indexOf(DESCRIPTION)));
+                        String priority = pDetails.get(pDetails.indexOf(PRIORITY) + 1);
                         proj.addTask(new Task(title, desc, priority));
                     }
                     break;

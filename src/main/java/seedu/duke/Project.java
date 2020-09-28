@@ -1,5 +1,6 @@
 package seedu.duke;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,8 @@ public class Project {
     String description;
     int projectDuration;
     int sprintLength;
+    LocalDate startDate = null;
+    LocalDate endDate = null;
 
     public Project(String title, String description, int projectDuration, int sprintLength) {
         this.title = title;
@@ -17,21 +20,27 @@ public class Project {
         this.projectDuration = projectDuration;
         this.sprintLength = sprintLength;
     }
+
     public String toString() {
         return "Project title: " + title + "\nProject description " + description;
     }
+
     public int getProjectDuration() {
         return projectDuration;
     }
+
     public int getSprintLength() {
         return sprintLength;
     }
+
     public String getTitle() {
         return title;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void addMember(List<String> userId) {
         Member m;
         for (String s : userId) {
@@ -69,12 +78,21 @@ public class Project {
     }
     public void displayProjectBacklog() {
         if (projectBacklog.size() == 0) {
-            System.out.println("No tasks currently added to projecet backlog.");
+            System.out.println("No tasks currently added to project backlog.");
         } else {
             System.out.println("Current tasks in your project backlog");
             for (int i = 0; i < projectBacklog.size(); i++) {
                 System.out.println("\t" + (i + 1) + ". " + projectBacklog.get(i).title);
             }
+        }
+    }
+
+    // Call this function every time a new sprint object is instantiated.
+    // sets the start date the first time.
+    public void setStartDate() {
+        if (startDate != null) {
+            startDate = LocalDate.now();
+            endDate = startDate.plusDays(projectDuration);
         }
     }
 }
