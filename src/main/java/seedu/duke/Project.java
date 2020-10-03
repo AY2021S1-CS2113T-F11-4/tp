@@ -52,6 +52,7 @@ public class Project {
             }
         }
     }
+
     //add comparator for removing object
     public void removeMember(List<String> userId) {
         for (String s : userId) {
@@ -62,6 +63,7 @@ public class Project {
             }
         }
     }
+
     public void displayMembers() {
         if (member.size() == 0) {
             System.out.println("Currently no members added to the project.");
@@ -76,6 +78,7 @@ public class Project {
     public void addTask(Task task) {
         projectBacklog.add(task);
     }
+
     public void displayProjectBacklog() {
         if (projectBacklog.size() == 0) {
             System.out.println("No tasks currently added to project backlog.");

@@ -2,10 +2,12 @@ package seedu.duke;
 
 public class Member {
     String userId;
-    public Member(String userId){
+
+    public Member(String userId) {
         this.userId = userId;
     }
-    public String getUserId(){
+
+    public String getUserId() {
         return userId;
     }
 
