@@ -1,1 +1,3 @@
-James Gosling
+project /create -title MeTube -desc video streaming software -duration 90 -sd 10
+member /add gunit
+bye
