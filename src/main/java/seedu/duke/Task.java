@@ -12,8 +12,4 @@ public class Task {
         this.priority = priority;
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a16161dafe298a638622375d76bbb9552b33b5cd

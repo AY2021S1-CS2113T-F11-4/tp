@@ -98,8 +98,4 @@ public class Project {
             endDate = startDate.plusDays(projectDuration);
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a16161dafe298a638622375d76bbb9552b33b5cd
