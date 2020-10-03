@@ -26,8 +26,6 @@ public class Duke {
         int projectDur = Integer.parseInt(pdetails.get(pdetails.indexOf(CommandExtract.DURATION) + 1));
         int projectSD = Integer.parseInt(pdetails.get(pdetails.indexOf(CommandExtract.SD) + 1));
 
-        System.out.println("Please enter the project details for instantiation");
-
         Project proj = new Project(projectTitle, projectDesc, projectDur, projectSD);
         input = in.nextLine();
         while (!input.equalsIgnoreCase("bye")) {
