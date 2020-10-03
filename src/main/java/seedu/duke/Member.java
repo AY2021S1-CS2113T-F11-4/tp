@@ -22,4 +22,8 @@ public class Member {
         // Compare the userId of members and return accordingly
         return userId.equals(v.userId);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a16161dafe298a638622375d76bbb9552b33b5cd
