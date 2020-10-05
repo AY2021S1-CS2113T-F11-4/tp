@@ -2,7 +2,7 @@ package seedu.duke;
 
 public class Task {
 
-    String title;
+    public String title;
     String description;
     String priority;
     boolean isDone;
