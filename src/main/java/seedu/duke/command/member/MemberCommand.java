@@ -21,7 +21,7 @@ public class MemberCommand {
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-             Ui.showError("Required index of project not found. Please create before proceeding.");
+            Ui.showError("Required index of project not found. Please create before proceeding.");
         }
     }
 

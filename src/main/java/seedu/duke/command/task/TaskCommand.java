@@ -10,7 +10,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
 
-import static seedu.duke.command.CommandSummary.*;
+import static seedu.duke.command.CommandSummary.TASK_ID;
+import static seedu.duke.command.CommandSummary.PRIORITY;
+import static seedu.duke.command.CommandSummary.TITLE;
+import static seedu.duke.command.CommandSummary.DESCRIPTION;
 
 
 public class TaskCommand {
@@ -56,7 +59,8 @@ public class TaskCommand {
                 try {
                     int backlogId = Integer.parseInt(id) - offset;
                     if (backlogId < proj.backlog.size()) {
-                        Ui.showToUser("The corresponding task " + proj.backlog.getTask(backlogId).getTitle() + "has been removed.");
+                        Ui.showToUser("The corresponding task " + proj.backlog.getTask(backlogId).getTitle()
+                                + "has been removed.");
                         proj.backlog.backlogTasks.remove(backlogId);
                         offset++;
                     } else {
