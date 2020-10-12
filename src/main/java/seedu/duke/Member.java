@@ -1,4 +1,4 @@
-package seedu.duke.model;
+package seedu.duke;
 
 import seedu.duke.task.Task;
 import java.util.ArrayList;

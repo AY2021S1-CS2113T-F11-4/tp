@@ -2,7 +2,6 @@ package seedu.duke.ui;
 
 import seedu.duke.common.Messages;
 
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -17,8 +16,8 @@ public class Ui {
      * Prints welcome message.
      */
     public static void showWelcomeScreen() {
-        showToUser(Messages.MESSAGE_LOGO);
-        showToUser(Messages.MESSAGE_WELCOME);
+        showToUserLn(Messages.MESSAGE_LOGO);
+        showToUserLn(Messages.MESSAGE_WELCOME);
     }
 
     /**
@@ -40,10 +39,23 @@ public class Ui {
      *
      * @param messages Specify messages to print
      */
-    public static void showToUser(String... messages) {
+    public static void showToUserLn(String... messages) {
         for (String message : messages) {
             out.println(message);
         }
     }
+
+    public static void showError(String... messages) {
+        for (String message : messages) {
+            out.println(message);
+        }
+    }
+    public static void showToUser(String... messages) {
+        for (String message : messages) {
+            out.print(message);
+        }
+    }
+
+
 
 }

@@ -2,7 +2,7 @@ package seedu.duke.command.project;
 
 import seedu.duke.exception.DukeException;
 import seedu.duke.project.Project;
-import seedu.duke.ui.old.Ui;
+import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -43,7 +43,7 @@ public class ProjectCommand {
         }
 
         Project proj = new Project(title, description, deadline, sd);
-        //ui.printProjectAdded();
+        Ui.showToUserLn("Project successfully created.");
         projectList.add(proj);
     }
 }

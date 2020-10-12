@@ -1,8 +1,9 @@
 package seedu.duke.command.member;
 
-import seedu.duke.model.Member;
+
+import seedu.duke.Member;
 import seedu.duke.project.Project;
-import seedu.duke.ui.old.Ui;
+import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
 
@@ -12,16 +13,16 @@ public class MemberCommand {
         try {
             Project proj = projectList.get(0);
             for (String s : userId) {
-                if (proj.members.memberList.contains(new Member(s))) {
-                    //Ui.printMemberAlreadyAdded(s);
+                if (proj.members.containMember(new Member(s))) {
+                    Ui.showToUserLn(s + " is already associated to the project.");
                 } else {
                     m = new Member(s);
-                    proj.members.memberList.add(m);
-                    //Ui.printAddMember(s);
+                    proj.members.addMember(m);
+                    Ui.showToUserLn(s + " has been added to the project.");
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            // Ui.printError("Required index of project not found. Please create before proceeding.");
+             Ui.showError("Required index of project not found. Please create before proceeding.");
         }
     }
 
@@ -30,15 +31,15 @@ public class MemberCommand {
         try {
             proj = projectList.get(0);
             for (String s : userId) {
-                if (proj.members.memberList.contains(new Member(s))) {
-                    proj.members.memberList.remove(new Member(s));
-                    // Ui.removeMember(s);
+                if (proj.members.containMember(new Member(s))) {
+                    proj.members.removeMember(new Member(s));
+                    Ui.showToUserLn(s + " has been removed from the project.");
                 } else {
-                    // Ui.memberNotFound(s);
+                    Ui.showToUserLn(s + " is not associated with the project.");
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            //ui.printError("Required index of project not found. Please create before proceeding.");
+            Ui.showError("Required index of project not found. Please create before proceeding.");
         }
     }
 

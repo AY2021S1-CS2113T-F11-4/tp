@@ -1,9 +1,10 @@
 package seedu.duke.command.task;
 
+import seedu.duke.common.Messages;
 import seedu.duke.exception.DukeException;
 import seedu.duke.project.Project;
 import seedu.duke.task.Task;
-import seedu.duke.ui.old.Ui;
+import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,10 +44,10 @@ public class TaskCommand {
             Task task = new Task(title, description, priority);
             proj.backlog.addTask(task);
 
-            //ui.printTaskAdded(proj.backlog.getTask(proj.backlog.size() - 1));
+            Ui.showToUserLn(task.getTitle() + " has been added.");
 
         } catch (IndexOutOfBoundsException e) {
-            //ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
 
     }
@@ -57,22 +58,24 @@ public class TaskCommand {
             Project proj = projectList.get(0);
             Collections.sort(taskId);
             int offset = 1;
+            Task task;
             for (String id : taskId) {
                 try {
                     int backlogId = Integer.parseInt(id) - offset;
                     if (backlogId < proj.backlog.size()) {
-                        //ui.printTaskRemoved(proj.backlog.getTask(backlogId));
-                        proj.backlog.backlogTasks.remove(backlogId);
+                        task = proj.backlog.getTask(backlogId);
+                        Ui.showToUserLn("The corresponding task " + task.getTitle() + "has been removed.");
+                        proj.backlog.removeTask(backlogId);
                         offset++;
                     } else {
-                        //Ui.displayInvalidId();
+                        Ui.showError(Messages.MESSAGE_INVALID_ID);
                     }
                 } catch (NumberFormatException e) {
-                   // Ui.printError("Task ID entered is not an integer!");
+                    Ui.showError(Messages.MESSAGE_INVALID_IDTYPE);
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            //Ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
     }
 
@@ -80,22 +83,23 @@ public class TaskCommand {
 
         try {
             Project proj = projectList.get(0);
+            Ui.showToUserLn("The details of the tasks are as follows: ");
             for (String id : taskId) {
                 Task task;
                 try {
                     int backlogId = Integer.parseInt(id) - 1;
                     if (backlogId < proj.backlog.backlogTasks.size()) {
                         task = proj.backlog.getTask(backlogId);
-                        //ui.displayTask(task);
+                        Ui.showToUserLn("\t Title: " + task.getTitle());
                     } else {
-                        //Ui.displayInvalidId();
+                        Ui.showError(Messages.MESSAGE_INVALID_ID);
                     }
                 } catch (NumberFormatException e) {
-                    //Ui.printError("Task ID entered is not an integer!");
+                    Ui.showError(Messages.MESSAGE_INVALID_IDTYPE);
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            //Ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
     }
 
@@ -120,14 +124,15 @@ public class TaskCommand {
             try {
                 task = proj.backlog.getTask(id);
                 task.setPriority(priority);
-                //ui.printPriorityChanged(proj.backlog.getTask(id));
+                Ui.showToUserLn("The task " + task.getTitle() + "has its priority changed to:");
+                Ui.showToUserLn("\t" + task.getPriority());
             } catch (IndexOutOfBoundsException e) {
                 throw new DukeException("Task ID entered is out of bounds!");
             } catch (IllegalArgumentException e) {
                 throw new DukeException("Priority entered is invalid!");
             }
         } catch (IndexOutOfBoundsException e) {
-            //Ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
     }
 
@@ -142,18 +147,16 @@ public class TaskCommand {
                     if (backlogId < proj.backlog.backlogTasks.size()) {
                         task = proj.backlog.getTask(backlogId);
                         task.setAsDone();
-                        //Ui.displayTaskDone(proj.backlog.getTask(backlogId), backlogId + 1);
+                        Ui.showToUserLn(task.getTitle() + "has been marked as done.");
                     } else {
-                        //Ui.displayInvalidId();
+                        Ui.showError(Messages.MESSAGE_INVALID_ID);
                     }
                 } catch (NumberFormatException e) {
-                    //Ui.printError("Task ID is not an integer!");
-                } catch (IndexOutOfBoundsException e) {
-                    //Ui.printError("Task ID is out of bounds!");
+                    Ui.showError(Messages.MESSAGE_INVALID_IDTYPE);
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            //Ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
     }
 }

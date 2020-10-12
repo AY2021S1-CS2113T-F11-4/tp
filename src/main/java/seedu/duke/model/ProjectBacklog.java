@@ -1,3 +1,4 @@
+
 package seedu.duke.model;
 
 import seedu.duke.ui.Ui;

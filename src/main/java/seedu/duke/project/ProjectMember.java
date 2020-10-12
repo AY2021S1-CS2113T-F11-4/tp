@@ -1,6 +1,6 @@
 package seedu.duke.project;
 
-import seedu.duke.model.Member;
+import seedu.duke.Member;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,10 @@ public class ProjectMember {
 
     public Member getMember(int id) {
         return memberList.get(id);
+    }
+
+    public void addMember(Member m){
+        memberList.add(m);
     }
 
     //    public void addMember(List<String> userId) {
@@ -46,4 +50,11 @@ public class ProjectMember {
         }
     }
 
+    public boolean containMember(Member member) {
+        return memberList.contains(member);
+    }
+
+    public void removeMember(Member member) {
+        memberList.remove(member);
+    }
 }
