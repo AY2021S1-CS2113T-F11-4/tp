@@ -1,6 +1,7 @@
 package seedu.duke.ui;
 
 import seedu.duke.common.Messages;
+import seedu.duke.task.Task;
 
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -48,6 +49,14 @@ public class Ui {
 
     public static void showError(String s){
         out.println(s);
+    }
+
+    public static void displayTask(Task task) {
+        System.out.println("The details of the task is as follows:");
+        System.out.println("Task title: " + task.getTitle());
+        System.out.println("Task Description: " + task.getDescription());
+        System.out.println("Task Priority: " + task.getPriority());
+        System.out.println("Is it done: " + task.getDone());
     }
 
 }

@@ -1,5 +1,6 @@
 package seedu.duke.command.task;
 
+import seedu.duke.common.Messages;
 import seedu.duke.exception.DukeException;
 import seedu.duke.project.Project;
 import seedu.duke.task.Task;
@@ -9,10 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
 
-import static seedu.duke.command.CommandSummary.PRIORITY;
-import static seedu.duke.command.CommandSummary.TITLE;
-import static seedu.duke.command.CommandSummary.DESCRIPTION;
-import static seedu.duke.command.CommandSummary.TASK_ID;
+import static seedu.duke.command.CommandSummary.*;
 
 
 public class TaskCommand {
@@ -42,13 +40,10 @@ public class TaskCommand {
             Project proj = projectList.get(0);
             Task task = new Task(title, description, priority);
             proj.backlog.addTask(task);
-
             Ui.showToUser(task.toString());
-
         } catch (IndexOutOfBoundsException e) {
             Ui.showError("There are no projects! Please create a project first.");
         }
-
     }
 
     public void deleteTaskCommand(ArrayList<String> taskId, ArrayList<Project> projectList) {
@@ -61,14 +56,14 @@ public class TaskCommand {
                 try {
                     int backlogId = Integer.parseInt(id) - offset;
                     if (backlogId < proj.backlog.size()) {
-                        //ui.printTaskRemoved(proj.backlog.getTask(backlogId));
+                        Ui.showToUser("The corresponding task " + proj.backlog.getTask(backlogId).getTitle() + "has been removed.");
                         proj.backlog.backlogTasks.remove(backlogId);
                         offset++;
                     } else {
-                        //Ui.displayInvalidId();
+                        Ui.showError(Messages.MESSAGE_INVALID_ID);
                     }
                 } catch (NumberFormatException e) {
-                   Ui.showError("Task ID entered is not an integer!");
+                    Ui.showError(Messages.Message_INVALID_IDTYPE);
                 }
             }
         } catch (IndexOutOfBoundsException e) {
@@ -86,12 +81,12 @@ public class TaskCommand {
                     int backlogId = Integer.parseInt(id) - 1;
                     if (backlogId < proj.backlog.backlogTasks.size()) {
                         task = proj.backlog.getTask(backlogId);
-                        //ui.displayTask(task);
+                        Ui.displayTask(task);
                     } else {
-                        //Ui.displayInvalidId();
+                        Ui.showError(Messages.MESSAGE_INVALID_ID);
                     }
                 } catch (NumberFormatException e) {
-                    Ui.showError("Task ID entered is not an integer!");
+                    Ui.showError(Messages.Message_INVALID_IDTYPE);
                 }
             }
         } catch (IndexOutOfBoundsException e) {
