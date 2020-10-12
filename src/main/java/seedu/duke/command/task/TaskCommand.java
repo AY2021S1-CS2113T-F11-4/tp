@@ -3,7 +3,7 @@ package seedu.duke.command.task;
 import seedu.duke.exception.DukeException;
 import seedu.duke.project.Project;
 import seedu.duke.task.Task;
-import seedu.duke.ui.old.Ui;
+import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,10 +43,10 @@ public class TaskCommand {
             Task task = new Task(title, description, priority);
             proj.backlog.addTask(task);
 
-            //ui.printTaskAdded(proj.backlog.getTask(proj.backlog.size() - 1));
+            Ui.showToUser(task.toString());
 
         } catch (IndexOutOfBoundsException e) {
-            //ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
 
     }
@@ -68,11 +68,11 @@ public class TaskCommand {
                         //Ui.displayInvalidId();
                     }
                 } catch (NumberFormatException e) {
-                   // Ui.printError("Task ID entered is not an integer!");
+                   Ui.showError("Task ID entered is not an integer!");
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            //Ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
     }
 
@@ -91,11 +91,11 @@ public class TaskCommand {
                         //Ui.displayInvalidId();
                     }
                 } catch (NumberFormatException e) {
-                    //Ui.printError("Task ID entered is not an integer!");
+                    Ui.showError("Task ID entered is not an integer!");
                 }
             }
         } catch (IndexOutOfBoundsException e) {
-            //Ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
     }
 
@@ -127,7 +127,7 @@ public class TaskCommand {
                 throw new DukeException("Priority entered is invalid!");
             }
         } catch (IndexOutOfBoundsException e) {
-            //Ui.printError("There are no projects! Please create a project first.");
+            Ui.showError("There are no projects! Please create a project first.");
         }
     }
 

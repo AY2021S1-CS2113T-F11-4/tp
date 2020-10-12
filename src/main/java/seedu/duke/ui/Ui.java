@@ -46,4 +46,8 @@ public class Ui {
         }
     }
 
+    public static void showError(String s){
+        out.println(s);
+    }
+
 }
