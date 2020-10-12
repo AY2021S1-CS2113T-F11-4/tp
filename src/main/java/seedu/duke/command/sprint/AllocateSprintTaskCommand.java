@@ -43,28 +43,28 @@ public class AllocateSprintTaskCommand extends SprintCommand {
 
     private void checkReason(Project proj, Ui ui) {
         if (allSprint.size() == 0) {
-            ui.showToUserLn("You have yet to create your sprint.");
+            ui.showToUser("You have yet to create your sprint.");
             return;
         }
 
         Sprint latestSprint = allSprint.getSprint(allSprint.size() - 1);
         if (DateTimeParser.diff(LocalDate.now(), proj.getEndDate()) == 0) {
-            ui.showToUserLn("Project already ended on " + proj.getEndDate());
+            ui.showToUser("Project already ended on " + proj.getEndDate());
             return;
         } else if (DateTimeParser.diff(LocalDate.now(), proj.getStartDate()) > 0) {
-            ui.showToUserLn("Project will start on " + proj.getStartDate());
+            ui.showToUser("Project will start on " + proj.getStartDate());
             return;
         }
 
         if (DateTimeParser.diff(latestSprint.getEndDate(), LocalDate.now()) >= 0) {
-            ui.showToUserLn("Latest sprint ended on " + latestSprint.getEndDate());
-            ui.showToUserLn("Please create new sprint.");
+            ui.showToUser("Latest sprint ended on " + latestSprint.getEndDate());
+            ui.showToUser("Please create new sprint.");
             return;
         }
 
         Sprint current = allSprint.getSprint(0);
         if (DateTimeParser.diff(LocalDate.now(), current.getStartDate()) < 0) {
-            ui.showToUserLn("First sprint will start on " + current.getStartDate());
+            ui.showToUser("First sprint will start on " + current.getStartDate());
         }
     }
 }
