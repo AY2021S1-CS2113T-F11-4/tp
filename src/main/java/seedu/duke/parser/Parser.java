@@ -1,7 +1,10 @@
 package seedu.duke.parser;
 
 import seedu.duke.command.member.MemberCommand;
+import seedu.duke.command.project.CreateProjectCommand;
 import seedu.duke.command.project.ProjectCommand;
+import seedu.duke.command.project.SelectProjectCommand;
+import seedu.duke.command.project.ViewProjectCommand;
 import seedu.duke.command.sprint.AllocateSprintTaskCommand;
 import seedu.duke.command.sprint.ViewSprintCommand;
 import seedu.duke.command.sprint.AddSprintTaskCommand;
@@ -31,7 +34,7 @@ import static seedu.duke.command.CommandSummary.VIEW;
 import static seedu.duke.command.CommandSummary.DONE;
 import static seedu.duke.command.CommandSummary.PRIORITY;
 import static seedu.duke.command.CommandSummary.ASSIGN;
-
+import static seedu.duke.command.CommandSummary.SELECT;
 
 public class Parser {
     //Groups of 3: (command) (action) (options)
@@ -84,10 +87,13 @@ public class Parser {
                 }
                 switch (action.toLowerCase()) {
                 case CREATE:
-                    new ProjectCommand().createProjectCommand(parameters, projectList);
+                    new CreateProjectCommand(parameters, projectList).execute();
                     break;
                 case VIEW:
-                    new ProjectCommand().viewProjectCommand(projectList);
+                    new ViewProjectCommand(parameters, projectList).execute();
+                    break;
+                case SELECT:
+                    new SelectProjectCommand(parameters).execute();
                     break;
                 default:
                     try {

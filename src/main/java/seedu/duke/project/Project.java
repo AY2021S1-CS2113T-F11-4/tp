@@ -29,11 +29,11 @@ public class Project implements Jsonable {
     public Project() {
     }
 
-    public Project(String title, String description, String projectDuration, String sprintLength) {
+    public Project(String title, String description, int projectDuration, int sprintLength) {
         this.title = title;
         this.description = description;
-        this.projectDuration = Integer.parseInt(projectDuration.trim());
-        this.sprintLength = Integer.parseInt(sprintLength);
+        this.projectDuration = projectDuration;
+        this.sprintLength = sprintLength;
         backlog = new ProjectBacklog(this);
         members = new ProjectMembers();
         allSprints = new SprintList();

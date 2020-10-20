@@ -8,7 +8,6 @@
                                     |_|
 
 WELCOME TO SCRUMPTIOUS
-command>No projects are created.
 command>Exception found: Missing parameters.
 command>Project successfully created.
 
@@ -21,38 +20,15 @@ command>Project successfully created.
 [There are no Sprints]
 =================================================================
 
-command>
-============================ PROJECT ============================
-[Title: MeTube]
-[Description: video streaming software]
-[No members added]
-[Project will start along with the first sprint]
-[Project backlog is empty]
-[There are no Sprints]
-=================================================================
-
 command>amy has been added to the project.
 john has been added to the project.
-mary has been added to the project.
-jane has been added to the project.
 bob has been added to the project.
-command>bob has been removed from the project.
-command>
-============================ PROJECT ============================
-[Title: MeTube]
-[Description: video streaming software]
-[Members: amy john mary jane]
-[Project will start along with the first sprint]
-[Project backlog is empty]
-[There are no Sprints]
-=================================================================
-
 command>Task successfully created.
 
 [Task]
 	ID: 1
-	Title: dummyTask1
-	Description: dummy_description
+	Title: Add UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
@@ -61,8 +37,8 @@ command>Task successfully created.
 
 [Task]
 	ID: 2
-	Title: dummyTask2
-	Description: dummy_description
+	Title: Add2 UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
@@ -71,8 +47,8 @@ command>Task successfully created.
 
 [Task]
 	ID: 3
-	Title: dummyTask3
-	Description: dummy_description
+	Title: Add3 UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
@@ -81,8 +57,8 @@ command>Task successfully created.
 
 [Task]
 	ID: 4
-	Title: dummyTask4
-	Description: dummy_description
+	Title: Add4 UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
@@ -91,8 +67,8 @@ command>Task successfully created.
 
 [Task]
 	ID: 5
-	Title: dummyTask5
-	Description: dummy_description
+	Title: Add5 UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
@@ -101,48 +77,19 @@ command>Task successfully created.
 
 [Task]
 	ID: 6
-	Title: dummyTask6
-	Description: dummy_description
+	Title: Add6 UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
 
-command>
-============================ PROJECT ============================
-[Title: MeTube]
-[Description: video streaming software]
-[Members: amy john mary jane]
-[Project will start along with the first sprint]
-
----------------------------- BACKLOG ----------------------------
-[Task ID: 1]	[Title: dummyTask1]	[Completion: Incomplete]
-[Task ID: 2]	[Title: dummyTask2]	[Completion: Incomplete]
-[Task ID: 3]	[Title: dummyTask3]	[Completion: Incomplete]
-[Task ID: 4]	[Title: dummyTask4]	[Completion: Incomplete]
-[Task ID: 5]	[Title: dummyTask5]	[Completion: Incomplete]
-[Task ID: 6]	[Title: dummyTask6]	[Completion: Incomplete]
------------------------------------------------------------------
-[There are no Sprints]
-=================================================================
-
-command>The details of the tasks are as follows: 
-
-[Task]
-	ID: 2
-	Title: dummyTask2
-	Description: dummy_description
-	Priority: High priority
-	Completion: Incomplete
-	Task have yet to be assigned to anyone
-
-command>You have yet to create your sprint.
 command>Project will start along with the newly created sprint
 Project period: 2020-10-10 to 2020-11-08
 
 ============================ SPRINT =============================
 [ID: 1]
-[Goal: milestone1]
-[Period: 2020-10-10 - 2020-10-19] 
+[Goal: goal1 ]
+[Period: 2020-10-10 - 2020-10-19]
 [No allocated tasks]
 =================================================================
 
@@ -150,16 +97,17 @@ command>Newly created sprint will automatically start after the previous sprint 
 
 ============================ SPRINT =============================
 [ID: 2]
-[Goal: milestone2]
-[Period: 2020-10-20 - 2020-10-29] 
+[Goal: goal2]
+[Period: 2020-10-20 - 2020-10-29]
 [No allocated tasks]
 =================================================================
 
-command>
+command>Newly created sprint will automatically start after the previous sprint ends.
+
 ============================ SPRINT =============================
 [ID: 3]
-[Goal: milestone3]
-[Period: 2020-10-30 - 2020-11-08] 
+[Goal: goal3]
+[Period: 2020-10-30 - 2020-11-08]
 [No allocated tasks]
 =================================================================
 
@@ -172,148 +120,103 @@ All sprints are already created.
 command>
 ========================= CURRENT SPRINT ========================
 [ID: 1]
-[Goal: milestone1]
-[Period: 2020-10-10 - 2020-10-19] 
+[Goal: goal1 ]
+[Period: 2020-10-10 - 2020-10-19]
 [Remaining: 0 days]
 [No allocated tasks]
 =================================================================
-command>
-============================ PROJECT ============================
-[Title: MeTube]
-[Description: video streaming software]
-[Members: amy john mary jane]
-[Period: 2020-10-10 - 2020-11-08] 
-
----------------------------- BACKLOG ----------------------------
-[Task ID: 1]	[Title: dummyTask1]	[Completion: Incomplete]
-[Task ID: 2]	[Title: dummyTask2]	[Completion: Incomplete]
-[Task ID: 3]	[Title: dummyTask3]	[Completion: Incomplete]
-[Task ID: 4]	[Title: dummyTask4]	[Completion: Incomplete]
-[Task ID: 5]	[Title: dummyTask5]	[Completion: Incomplete]
-[Task ID: 6]	[Title: dummyTask6]	[Completion: Incomplete]
------------------------------------------------------------------
-
--------------------------- ALL SPRINTS --------------------------
-[Sprint ID: 1]	[Goal: milestone1]	[Period: 2020-10-10 - 2020-10-19]
-[Sprint ID: 2]	[Goal: milestone2]	[Period: 2020-10-20 - 2020-10-29]
-[Sprint ID: 3]	[Goal: milestone3]	[Period: 2020-10-30 - 2020-11-08]
------------------------------------------------------------------
-=================================================================
-
+command>Add UI  added to sprint.
+Add3 UI  added to sprint.
+Add4 UI  added to sprint.
 command>
 ========================= CURRENT SPRINT ========================
 [ID: 1]
-[Goal: milestone1]
-[Period: 2020-10-10 - 2020-10-19] 
-[Remaining: 0 days]
-[No allocated tasks]
-=================================================================
-command>dummyTask4 added to sprint.
-dummyTask3 added to sprint.
-dummyTask1 added to sprint.
-command>
-========================= CURRENT SPRINT ========================
-[ID: 1]
-[Goal: milestone1]
-[Period: 2020-10-10 - 2020-10-19] 
+[Goal: goal1 ]
+[Period: 2020-10-10 - 2020-10-19]
 [Remaining: 0 days]
 
 [Task]
-	ID: 4
-	Title: dummyTask4
-	Description: dummy_description
+	ID: 1
+	Title: Add UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
 
 [Task]
 	ID: 3
-	Title: dummyTask3
-	Description: dummy_description
+	Title: Add3 UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
-
-[Task]
-	ID: 1
-	Title: dummyTask1
-	Description: dummy_description
-	Priority: High priority
-	Completion: Incomplete
-	Task have yet to be assigned to anyone
-=================================================================
-command>dummyTask1 assigned to [amy]
-command>dummyTask3 assigned to [amy, jane, mary]
-command>User not found.
-command>
-========================= CURRENT SPRINT ========================
-[ID: 1]
-[Goal: milestone1]
-[Period: 2020-10-10 - 2020-10-19] 
-[Remaining: 0 days]
 
 [Task]
 	ID: 4
-	Title: dummyTask4
-	Description: dummy_description
+	Title: Add4 UI
+	Description: add an interactive UI
 	Priority: High priority
 	Completion: Incomplete
 	Task have yet to be assigned to anyone
-
-[Task]
-	ID: 3
-	Title: dummyTask3
-	Description: dummy_description
-	Priority: High priority
-	Completion: Incomplete
-	Assigned to: amy jane mary 
-
-[Task]
-	ID: 1
-	Title: dummyTask1
-	Description: dummy_description
-	Priority: High priority
-	Completion: Incomplete
-	Assigned to: amy 
 =================================================================
-command>dummyTask3 removed from sprint.
-command>dummyTask1 has been marked as done.
-command>The corresponding task dummyTask4 has been removed from project.
-command>
-============================ PROJECT ============================
-[Title: MeTube]
-[Description: video streaming software]
-[Members: amy john mary jane]
-[Period: 2020-10-10 - 2020-11-08] 
-
----------------------------- BACKLOG ----------------------------
-[Task ID: 1]	[Title: dummyTask1]	[Completion: Completed]
-[Task ID: 2]	[Title: dummyTask2]	[Completion: Incomplete]
-[Task ID: 3]	[Title: dummyTask3]	[Completion: Incomplete]
-[Task ID: 5]	[Title: dummyTask5]	[Completion: Incomplete]
-[Task ID: 6]	[Title: dummyTask6]	[Completion: Incomplete]
------------------------------------------------------------------
-
--------------------------- ALL SPRINTS --------------------------
-[Sprint ID: 1]	[Goal: milestone1]	[Period: 2020-10-10 - 2020-10-19]
-[Sprint ID: 2]	[Goal: milestone2]	[Period: 2020-10-20 - 2020-10-29]
-[Sprint ID: 3]	[Goal: milestone3]	[Period: 2020-10-30 - 2020-11-08]
------------------------------------------------------------------
-=================================================================
-
+command>Add UI  assigned to [amy]
+command>Add3 UI  assigned to [amy, john]
+command>Add UI  assigned to [bob]
 command>
 ========================= CURRENT SPRINT ========================
 [ID: 1]
-[Goal: milestone1]
-[Period: 2020-10-10 - 2020-10-19] 
+[Goal: goal1 ]
+[Period: 2020-10-10 - 2020-10-19]
 [Remaining: 0 days]
 
 [Task]
 	ID: 1
-	Title: dummyTask1
-	Description: dummy_description
+	Title: Add UI
+	Description: add an interactive UI
 	Priority: High priority
-	Completion: Completed
-	Assigned to: amy 
+	Completion: Incomplete
+	Assigned to: amy bob
+
+[Task]
+	ID: 3
+	Title: Add3 UI
+	Description: add an interactive UI
+	Priority: High priority
+	Completion: Incomplete
+	Assigned to: amy john
+
+[Task]
+	ID: 4
+	Title: Add4 UI
+	Description: add an interactive UI
+	Priority: High priority
+	Completion: Incomplete
+	Task have yet to be assigned to anyone
 =================================================================
+command>Exception found: Missing parameters.
+command>The corresponding task Add4 UI has been removed from project.
+command>
+========================= CURRENT SPRINT ========================
+[ID: 1]
+[Goal: goal1 ]
+[Period: 2020-10-10 - 2020-10-19]
+[Remaining: 0 days]
+
+[Task]
+	ID: 1
+	Title: Add UI
+	Description: add an interactive UI
+	Priority: High priority
+	Completion: Incomplete
+	Assigned to: amy bob
+
+[Task]
+	ID: 3
+	Title: Add3 UI
+	Description: add an interactive UI
+	Priority: High priority
+	Completion: Incomplete
+	Assigned to: amy john
+=================================================================
+command>Exception found: Missing parameters.
 command>bye
